@@ -1,0 +1,18 @@
+body{
+    color: #333333;
+    font-size: 14px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+img{
+    vertical-align: middle;
+    border: none;
+}
+a{
+    text-decoration: none;
+}
