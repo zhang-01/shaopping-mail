@@ -1,6 +1,6 @@
 <template>
   <div class="details">
-    <TopBar bgCol="#fff">
+    <TopBar bgCol="#f7f7f7">
       <div slot="left" @click="backHome">
         <img src="@/assets/img/common/back.svg" alt="">
       </div>
@@ -12,22 +12,39 @@
           {{item}}</div>
       </div>
     </TopBar>
-    <div class="banner">
-      <Swiper>
-        <SwiperItem v-for="(item,index) in detailGoods.bannerImg" :key="index">
-          <img :src="item" alt="">
-        </SwiperItem>
-      </Swiper>
+<!--    <div class="banner">-->
+<!--      <Swiper>-->
+<!--        <SwiperItem v-for="(item,index) in detailGoods.bannerImg" :key="index">-->
+<!--          <img :src="item" alt="">-->
+<!--        </SwiperItem>-->
+<!--      </Swiper>-->
+<!--    </div>-->
+    <TopImg :imgs="detailGoods.bannerImg"></TopImg>
+    <ShopInfo :shoppingInfo="detailGoods.shoppingInfo"></ShopInfo>
+    <Columns :columns="detailGoods.columns"></Columns>
+    <Servi :servi="detailGoods.services"></Servi>
+    <Shop :shopInfo="detailGoods.shopInfo"></Shop>
+    <div class="shopIn">
+      <button class="shop-in">进店逛逛</button>
     </div>
+    <ShopDesc :desc="detailGoods.desc"></ShopDesc>
+    <WearingEffice :wear="detailGoods.detailInfo"></WearingEffice>
 
   </div>
 </template>
 
 <script>
   import {request} from "../../network/axios";
-  import {Swiper,SwiperItem} from "@/components/common/swiper"
+  // import {Swiper,SwiperItem} from "@/components/common/swiper"
 
   import TopBar from "@/components/common/topBar/TopBar"
+  import ShopInfo from "./children/DatailShopInfor"
+  import Columns from  "./children/Columns"
+  import TopImg from "./children/TopImg"
+  import Servi from "./children/Services"
+  import  Shop from  "./children/ShopInfo"
+  import ShopDesc from "./children/ShopDesc"
+  import WearingEffice from "./children/WearingEffice"
 
   export default {
     name: "Detail",
@@ -92,8 +109,15 @@
     },
     components:{
       TopBar,
-      Swiper,
-      SwiperItem
+      // Swiper,
+      // SwiperItem,
+      ShopInfo,
+      Columns,
+      TopImg,
+      Servi,
+      Shop,
+      ShopDesc,
+      WearingEffice
     }
   }
 </script>
@@ -119,7 +143,24 @@ img{
     height: 300px;
     overflow: hidden;
   }
+  .shop-in{
+    display: block;
+    width: 50vw;
+    margin: 20px auto;
+    height: 35px;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    background-color: #ccc;
+    font-size: 18px;
+    border: none;
+    /*margin: 10px auto;*/
+  }
   /*img{*/
   /*  width: 100vw;*/
+  /*}*/
+
+  /*.details{*/
+  /*  margin-bottom: 200px;*/
   /*}*/
 </style>
