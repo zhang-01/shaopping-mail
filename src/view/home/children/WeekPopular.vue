@@ -1,5 +1,7 @@
 <template>
-  $END$
+  <div>
+    <img src="@/assets/img/home/recommend_bg.jpg" alt="">
+  </div>
 </template>
 
 <script>
@@ -9,5 +11,7 @@
 </script>
 
 <style scoped>
-
+img{
+  width: 100vw;
+}
 </style>
